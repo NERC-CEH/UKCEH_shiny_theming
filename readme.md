@@ -10,6 +10,33 @@ There are a number of different standard layouts you can use for R Shiny: https:
 
 If you have any feedback on this guide then please create an issue on this gitub repository or email Simon Rolph (SimRol@ceh.ac.uk) and Kate Randall(KatRan@ceh.ac.uk).
 
+## Incorperating the changes into your shiny app
+
+In the subsequent code blocks we define `UKCEH_theme` and `UKCEH_titlePanel`. They need to be included in the `fluidPage()` function when defining `ui`. This is an example using the sidebar layout.
+
+```
+# Define UI for application that draws a histogram
+ui <- fluidPage(
+  #theme
+  theme = UKCEH_theme,
+  
+  # Application title
+  UKCEH_titlePanel("My first Shiny app"),
+  
+  # Sidebar with a slider input for number of bins 
+  sidebarLayout(
+    sidebarPanel(
+      ...
+    ),
+    
+    # Show a plot of the generated distribution
+    mainPanel(
+      ...
+    )
+  )
+)
+```
+
 ## Colours
 
 The UKCEH colours are defined here: https://brandroom.ceh.ac.uk/sites/default/files/2022-01/UKCEH_Colour_Guidelines.pdf
@@ -35,7 +62,7 @@ The `bslib` package is designed for theming shiny apps and can be used to change
 
 The UKCEH font is Montserrat. It is available on Google fonts: https://fonts.google.com/specimen/Montserrat
 
-These settings make the most of the the existing UKCEH colour palette and sets the correct fonts. You can preview a theme with `bs_theme_preview()`
+These settings make the most of the the existing UKCEH colour palette and sets the correct fonts. 
 
 ```
 library(bslib)
@@ -56,9 +83,21 @@ UKCEH_theme <- bs_add_variables(UKCEH_theme,
 bs_theme_preview(UKCEH_theme)
 ```
 
-[Picture of bs_theme_preview]
+You can preview a theme with `bs_theme_preview()` which brings up a webpage like so:
 
-You can also change the appearance of plots drawn using `ggplot2` appear by using:
+*Inputs:*
+
+![image](https://user-images.githubusercontent.com/17750766/159717824-32ca3012-329a-4796-91b1-04fcf0713cc9.png)
+
+*Tables:*
+
+![image](https://user-images.githubusercontent.com/17750766/159717971-c7e59693-da1c-43b0-9eef-55b0b3d5c34d.png)
+
+*Fonts:*
+
+![image](https://user-images.githubusercontent.com/17750766/159718071-d8657f35-a337-4ecc-b259-82c4156bea81.png)
+
+You can also change the appearance of plots drawn using `{ggplot2}` appear by using:
 ```
 library(thematic)
 thematic::thematic_shiny()
@@ -93,59 +132,31 @@ UKCEH_titlePanel <- function(title = "UKCEH Shiny app", windowTitle = title){
 }
 ```
 
-Note how the favicon and tab title have changed.
+Note how the favicon and tab title have changed:
+
+![image](https://user-images.githubusercontent.com/17750766/159717427-a5454c2c-02d3-4241-8c23-fb769fd68e3e.png)
+
 
 ## Footer
 
 Currently still working on the best way to format a footer and what content to include from the main site etc.
 
-## Incorperating the changes into your shiny app
-
-In the previous code blocks we have defined `UKCEH_theme` and `UKCEH_titlePanel`. They need to be included in the `fluidPage()` function when defining `ui`. This is an example using the sidebar layout 
-
-```
-# Define UI for application that draws a histogram
-ui <- fluidPage(
-  #theme
-  theme = UKCEH_theme,
-  
-  # Application title
-  UKCEH_titlePanel("My first Shiny app"),
-  
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      ...
-    ),
-    
-    # Show a plot of the generated distribution
-    mainPanel(
-      ...
-    )
-  )
-)
-```
-
 ## Examples
 
 ### Sidebar layout
 
-[Picture]
+A UKCEH branded version of the standard R Shiny example with some extra false inputs added to the sidebar.
 
-Code: 
+![image](https://user-images.githubusercontent.com/17750766/159717529-08361e20-bc3e-4c27-b7d2-3967c8317613.png)
 
-Live preview:
+Code: https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/examples/sidebar_layout.R
+
+Live preview: https://connect-apps.ceh.ac.uk/content/5f616ea7-af1a-4716-a7bf-48ac970ce788
 
 ### Fluid page layout
 
-Coming soon
+*Coming soon*
 
 ### Navbar layout
 
-Coming soon
-
-
-
-
-
-
+*Coming soon*
