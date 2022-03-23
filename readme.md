@@ -132,6 +132,9 @@ UKCEH_titlePanel <- function(title = "UKCEH Shiny app", windowTitle = title){
 }
 ```
 
+When `UKCEH_titlePanel` is included in the Shiny app it looks like this:
+![image](https://user-images.githubusercontent.com/17750766/159720789-dff9186c-7bca-437a-a487-46a57f44e014.png)
+
 Note how the favicon and tab title have changed:
 
 ![image](https://user-images.githubusercontent.com/17750766/159717427-a5454c2c-02d3-4241-8c23-fb769fd68e3e.png)
