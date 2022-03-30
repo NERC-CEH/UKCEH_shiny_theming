@@ -1,5 +1,34 @@
 # Theming R Shiny Applications
 
+## Quick start
+
+Make sure your Shiny app loads the required packages:
+
+```
+library(shiny)
+library(bslib)
+```
+
+1. Add the following to the top of `ui.R` or `app.R` (make sure the `devtools` package is installed)
+```
+devtools::source_url("https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/theme_elements.R?raw=TRUE")
+```
+
+2.	Add the following to the UI
+```
+ui <- fluidPage( 
+  #theme
+  theme = UKCEH_theme,  # << add this line
+
+  # Application title
+  UKCEH_titlePanel("Old Faithful Geyser Data"), # << replace your titlePanel() with UKCEH_titlePanel()
+  
+  ...
+)
+```
+
+See how it looks in a live Shiny app: https://connect-apps.ceh.ac.uk/content/5f616ea7-af1a-4716-a7bf-48ac970ce788
+
 ## Introduction
 
 R Shiny is a very useful way of making your R code run in a user friendly way with a user interface. We can publish R Shiny applications using RStudio Connect: https://connect-apps.ceh.ac.uk/connect/
@@ -10,11 +39,15 @@ There are a number of different standard layouts you can use for R Shiny: https:
 
 If you have any feedback on this guide then please create an issue on this gitub repository or email Simon Rolph (SimRol@ceh.ac.uk) and Kate Randall(KatRan@ceh.ac.uk).
 
-## Incorperating the changes into your shiny app
+## Incorporating the changes into your shiny app
 
-In the subsequent code blocks we define `UKCEH_theme` and `UKCEH_titlePanel`. They need to be included in the `fluidPage()` function when defining `ui`. This is an example using the sidebar layout.
+In the `theme_elements.R` we define `UKCEH_theme` and `UKCEH_titlePanel`. They need to be included in the `fluidPage()` function when defining `ui`. This is an example using the sidebar layout.
+
+The simplest way to get the theme is to use the `source_url()` function in the `devtools` package to source `theme_elements.R`. Alternatively, you could copy the code from https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/theme_elements.R?raw=TRUE and put it directly into your app.
 
 ```
+devtools::source_url("https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/theme_elements.R?raw=TRUE")
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   #theme
@@ -56,7 +89,7 @@ extended_colour_palette <- c("#8f7158","#fee9cd","#90c064","#37a635","#00883c","
 
 ```
 
-## Changing primary colours and fonts with `{bslib}`
+## Details: changing primary colours and fonts with `{bslib}`
 
 The `bslib` package is designed for theming shiny apps and can be used to change some universal elements like colours and fonts https://shiny.rstudio.com/articles/themes.html
 
@@ -109,7 +142,7 @@ See https://rstudio.github.io/thematic/ for more details.
 
 In R Shiny you can use the `titlePanel()` function (https://shiny.rstudio.com/reference/shiny/0.14/titlePanel.html) to give the page a title at the top of the page and it also updates the title in the tab to be the same text.
 
-The favicon is the tiny little image that appears in the tab of the web browser, it can be accessed direct via a web link from the brand room https://brandroom.ceh.ac.uk/themes/custom/ceh/favicon.ico so we don't ened to download it ourselves.
+The favicon is the tiny little image that appears in the tab of the web browser, it can be accessed direct via a web link from the brand room https://brandroom.ceh.ac.uk/themes/custom/ceh/favicon.ico so we don't need to download it ourselves.
 
 Here is a drop in replacement of that function which also adds the UKCEH logo and adds `| UK Centre for Ecology and Hydrology` after the title in the tab.
 
