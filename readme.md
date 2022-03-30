@@ -41,11 +41,11 @@ If you have any feedback on this guide then please create an issue on this gitub
 
 ## Incorporating the changes into your shiny app
 
-<<<<<<< HEAD
+
 In the `theme_elements.R` we define `UKCEH_theme` and `UKCEH_titlePanel`. They need to be included in the `fluidPage()` function when defining `ui`. This is an example using the sidebar layout.
 
 The simplest way to get the theme is to use the `source_url()` function in the `devtools` package to source `theme_elements.R`. Alternatively, you could copy the code from https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/theme_elements.R?raw=TRUE and put it directly into your app.
-=======
+
 You need to install and load the `bslib` package. Presumably you've already installed the `shiny` package.
 
 ```{r}
@@ -53,9 +53,6 @@ install.packages("bslib")
 library(bslib)
 library(shiny)
 ```
-
-We then need to define two R objects: `UKCEH_theme` and `UKCEH_titlePanel`. You can either copy them from the code blocks below or use an examples (https://github.com/NERC-CEH/UKCEH_shiny_theming#examples) into your script. `UKCEH_theme` and `UKCEH_titlePanel` need to be included in the `fluidPage()` function when defining `ui`. This is an example using the sidebar layout.
->>>>>>> 169f3772c7ffffa21d5b13336f0686dd199a6d96
 
 ```
 devtools::source_url("https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/theme_elements.R?raw=TRUE")
