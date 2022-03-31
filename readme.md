@@ -44,7 +44,7 @@ If you have any feedback on this guide then please create an issue on this gitub
 
 In the `theme_elements.R` we define `UKCEH_theme` and `UKCEH_titlePanel`. They need to be included in the `fluidPage()` function when defining `ui`. This is an example using the sidebar layout.
 
-The simplest way to get the theme is to use the `source_url()` function in the `devtools` package to source `theme_elements.R`. Alternatively, you could copy the code from https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/theme_elements.R?raw=TRUE and put it directly into your app.
+The simplest way to get the theme is to use the `source_url()` function in the `devtools` package to source `theme_elements.R` (as suggested by Michael Tso). Alternatively, you could copy the code from https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/theme_elements.R?raw=TRUE and put it directly into your app.
 
 You need to install and load the `bslib` package. Presumably you've already installed the `shiny` package.
 
