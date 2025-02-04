@@ -2,11 +2,12 @@
 
 ## Quick start
 
-Make sure your Shiny app loads the required packages:
+Make sure your Shiny app loads the required packages (and install with `install.packages()` if required):
 
 ```
 library(shiny)
 library(bslib)
+library(httr)
 ```
 
 1. Add the following to the top of `ui.R` or `app.R` (make sure the `devtools` package is installed)
@@ -200,11 +201,3 @@ A UKCEH branded version of the standard R Shiny example with some extra false in
 Code: https://github.com/NERC-CEH/UKCEH_shiny_theming/blob/main/examples/sidebar_layout.R
 
 Live preview: https://connect-apps.ceh.ac.uk/content/5f616ea7-af1a-4716-a7bf-48ac970ce788
-
-### Fluid page layout
-
-*Coming soon*
-
-### Navbar layout
-
-*Coming soon*
